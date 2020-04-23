@@ -32,14 +32,6 @@ func Suspend() ([]byte, error) {
 	return rs, err
 }
 
-// CPU停止工作
-func Halt() ([]byte, error) {
-	sys := NewSystemed("systemctl")
-	sys.SetArgs("halt")
-	rs, err := sys.Exec()
-	return rs, err
-}
-
 // 让系统进入冬眠状态
 func Hibernate() ([]byte, error) {
 	sys := NewSystemed("systemctl")
